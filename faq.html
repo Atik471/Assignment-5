@@ -38,28 +38,38 @@
 </head>
 <body class="font-lexend w-full ">
     <!-- navbar -->
-    <header class="md:mb-[16rem] mb-[12rem]">
-        <div class="fixed top-0 left-0 flex justify-between items-center pt-[1.5rem] md:pb-[2.8rem] pb-[2rem] lg:px-[8%] px-[5%] bg-light-pink w-full backdrop-blur-md">
-            <a href="index.html" class="order-1 md:text-[1.3rem] text-[0.9rem] font-semibold md:px-8 md:py-3 px-4 py-1 rounded-lg bg-light-green hover:bg-hover-green duration-200">
-                <button>Home</button>
-            </a>
-    
-            <div class="flex md:order-2 justify-center items-center gap-3">
-                <img class="md:w-[3rem] md:h-[3rem] w-6 h-6" src="assets/logo.png" alt="logo">
-                <h1 class="md:inline hidden md:text-[1.3rem] text-[0.9rem] font-semibold">Donate Bangladesh</h1>
-                <h1 class="md:hidden inline md:text-[1.3rem] text-[1.1rem] font-semibold">DB</h1>
+    <header class="md:mb-[10rem] mb-[8rem]">
+        <div class="fixed top-0 left-0 w-full bg-light-pink backdrop-blur-md">
+            <div class="flex justify-between items-center pt-[1.2rem] md:pb-[1.5rem] pb-[1rem] lg:px-[8%] px-[5%]  ">
+                <a href="index.html" class="order-1 md:text-[1.3rem] text-[0.9rem] font-semibold md:px-8 md:py-3 px-4 py-1 rounded-lg bg-light-green hover:bg-hover-green duration-200">
+                    <button>Home</button>
+                </a>
+        
+                <div class="flex md:order-2 justify-center items-center gap-3">
+                    <img class="md:w-[3rem] md:h-[3rem] w-6 h-6" src="assets/logo.png" alt="logo">
+                    <h1 class="md:inline hidden md:text-[1.3rem] text-[0.9rem] font-semibold">Donate Bangladesh</h1>
+                    <h1 class="md:hidden inline md:text-[1.3rem] text-[1.1rem] font-semibold">DB</h1>
+                </div>
+        
+                <div class="flex md:order-3 justify-center items-center gap-1">
+                    <img class="w-5 h-5" src="assets/coin.png" alt="coin">
+                    <h2 class=" md:text-[1.3rem] text-[0.9rem] font-medium "> <span id="total-amount">10000</span> BDT</h2>
+                </div>
             </div>
-    
-            <div class="flex md:order-3 justify-center items-center gap-1">
-                <img class="w-5 h-5" src="assets/coin.png" alt="coin">
-                <h2 class=" md:text-[1.3rem] text-[0.9rem] font-medium "> <span id="total-amount">10000</span> BDT</h2>
-            </div>
+            <section class="">
+                <div class=" flex justify-center items-center gap-4 py-[1rem]">
+                    <button id="donation-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200">Donation</button>
+                    <button id="history-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg border-2 border-slate-300 text-slate-600 hover:bg-slate-200 duration-200 gap-4 ">History</button>
+                </div>
+            </section>
         </div>
-    </header>
-
+     </header>
     <main>
         
     </main>
+
+    <footer class="bg-light-pink h-[10rem] w-full"></footer>
+      
 
     <script src="Scripts/script.js"></script>
 </body>
