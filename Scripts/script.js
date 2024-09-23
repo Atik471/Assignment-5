@@ -156,6 +156,8 @@ function donateMoney(event, obj){
     newHistory.querySelector('#history-amount').innerHTML = donationAmount
     newHistory.querySelector('#history-fund').innerHTML = obj.fundName.innerHTML
 
+    document.getElementById('history-alert').classList.add('hidden')
+
     historySection.appendChild(newHistory)
 
     modalSection.classList.remove('hidden')
