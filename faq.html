@@ -31,6 +31,14 @@
         .font-lexend{
             font-family: "Lexend", sans-serif;
         }
+
+        .faq input[type='radio']:checked + label + .content {
+            max-height: 200rem;
+            transition: max-height 2s;
+        }
+        .faq input[type='radio']:checked + label::before{
+            content: '-';
+        }
     </style>
 
 
@@ -38,7 +46,7 @@
 </head>
 <body class="font-lexend w-full ">
     <!-- navbar -->
-    <header class="md:mb-[10rem] mb-[8rem]">
+    <header class="md:mb-[8rem] mb-[5rem]">
         <div class="fixed top-0 left-0 w-full bg-light-pink backdrop-blur-md">
             <div class="flex justify-between items-center pt-[1.2rem] md:pb-[1.5rem] pb-[1rem] lg:px-[8%] px-[5%]  ">
                 <a href="index.html" class="order-1 md:text-[1.3rem] text-[0.9rem] font-semibold md:px-8 md:py-3 px-4 py-1 rounded-lg bg-light-green hover:bg-hover-green duration-200">
@@ -56,17 +64,61 @@
                     <h2 class=" md:text-[1.3rem] text-[0.9rem] font-medium "> <span id="total-amount">10000</span> BDT</h2>
                 </div>
             </div>
-            <section class="">
-                <div class=" flex justify-center items-center gap-4 py-[1rem]">
-                    <button id="donation-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200">Donation</button>
-                    <button id="history-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg border-2 border-slate-300 text-slate-600 hover:bg-slate-200 duration-200 gap-4 ">History</button>
-                </div>
-            </section>
         </div>
      </header>
     <main>
-        
+        <div class="lg:px-[8%] px-[5%] w-full mx-auto">
+            <h1 class="md:text-[2rem] text-[1.5rem] font-semibold md:mb-8 mb-4 text-center">Important FAQ</h1>
+            <ul class="faq">
+                <li class="list-none shadow-md md:mb-8 mb-4 border-2 md:rounded-2xl rounded-xl md:p-8 p-4">
+                    <input class="hidden" type="radio" name="faq-accordion" id="first-question" checked>
+                    <label class="before:content-['+'] before:mr-3 before:text-[1.3rem] font-bold cursor-pointer block" for="first-question">What is the Document Object Model(DOM)?</label>
+                    <div class="max-h-0 overflow-hidden content ml-5 mt-4">
+                        DOM is an Application Programming Interface(API) that is used in a web browser for HTML and JavaScript to communicate with each other. DOM creates a tree like model of HTML docs where each HTML element is a node. So the JavaScript code can access each node(or element) with DOM methods and manipulate them.
+                    </div>
+                </li>
+                <li class="list-none shadow-md md:mb-8 mb-4  border-2 md:rounded-2xl rounded-xl md:p-8 p-4">
+                    <input class="hidden" type="radio" name="faq-accordion" id="second-question">
+                    <label class="before:content-['+'] before:mr-3 font-bold  before:text-[1.3rem] cursor-pointer block" for="second-question">How do you select an element from DOM?</label>
+                    <div class="max-h-0 overflow-hidden content ml-5 mt-4">
+                        We can select an element from DOM using the the DOM methods. The most used methods are: <br> <br>
+                        <ul class="list-disc ml-4">
+                            <li>document.getElementById() -> to select an element with it's id.</li>
+                            <li>document.getElementsByClassName -> to select list of elements with it's class name.</li>
+                            <li>document.getElementsByTagName -> to select list of elements with tag name</li>
+                            <li>document.querySelector -> to select the first element with css selectors</li>
+                            <li>document.querySelectorAll -> to select list of elements with css selectors</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list-none shadow-md md:mb-8 mb-4 border-2 md:rounded-2xl rounded-xl md:p-8 p-4">
+                    <input class="hidden" type="radio" name="faq-accordion" id="third-question">
+                    <label class="before:content-['+'] before:mr-3 font-bold  before:text-[1.3rem] cursor-pointer block" for="third-question">What is event delegation in the context of the DOM, and why is it useful?</label>
+                    <div class="max-h-0 overflow-hidden content ml-5 mt-4">
+                        When an event occurs at a child element, it bubbles up the event to it's parent nodes. So the parent can add an action listener using the event. But the target of the event still is the child, which is the source. So instead of adding same event handler function to multiple child elements we can add a single event handler to the parent. This is called event delegation.
+                        <br> <br>
+                        Event delegation can be useful if child elements are generated dynamically. So that we don't need to explicitly add new event handler to each generated child.
+                    </div>
+                </li>
+                <li class="list-none shadow-md md:mb-8 mb-4 border-2 md:rounded-2xl rounded-xl md:p-8 p-4">
+                    <input class="hidden" type="radio" name="faq-accordion" id="fourth-question">
+                    <label class="before:content-['+'] before:mr-3 font-bold  before:text-[1.3rem] cursor-pointer block" for="fourth-question">How do you manipulate an element's attributes and styles using the DOM</label>
+                    <div class="max-h-0 overflow-hidden content ml-5 mt-4">
+                        Manipulating an element's attributes and styles can be done using DOM methods. <br> <br>
+                        To manipulate attributes, we can use these DOM method: getAttribute(attributeName), setAttribute(attributeName, value), removeAttribute(attributeName). <br> <br>
+                        To manipulate styles, we can manipulate classes or set inline styles. To manipulate classes we can use DOM methods like: classList.add(className), classList.remove(className), classList.toggle(className). <br>
+                        To add inline styles this syntax can be used: element.style.property = 'value';
+                    </div>
+                </li>
+            </ul>
+        </div>
     </main>
+    <!-- <section class="lg:px-[8%] px-[5%] py-6 flex-col-reverse">
+        <div id="history-div" class="border-2 border-slate-300 md:rounded-2xl rounded-lg md:p-8 p-4 mb-8 hidden">
+            <h1 class="mb-4 md:text-[1.3rem] text-[1.1rem] font-bold"><span id="history-amount"></span> Taka is Donated for <span id="history-fund"></span></h1>
+            <p class="text-slate-600 font-light">Date: <span id="history-date"></span></p>
+        </div>
+    </section> -->
 
     <footer class="bg-light-pink h-[10rem] w-full"></footer>
       
