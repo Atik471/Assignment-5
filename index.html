@@ -57,18 +57,84 @@
         <!-- toggle buttons -->
         <section class="fixed md:top-[7.5rem] top-[5.2rem] left-0 w-full">
             <div class=" flex justify-center items-center gap-4 py-[1.5rem] backdrop-blur-md bg-light-pink">
-                <button class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg bg-light-green gap-4 hover:bg-hover-green duration-200">Donation</button>
-                <button class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg border-2 border-slate-300 text-slate-600 hover:bg-slate-200 duration-200 gap-4 ">History</button>
+                <button id="donation-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200">Donation</button>
+                <button id="history-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg border-2 border-slate-300 text-slate-600 hover:bg-slate-200 duration-200 gap-4 ">History</button>
             </div>
         </section>
 
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique praesentium sint provident alias quaerat quam maiores harum esse deserunt, mollitia aliquid quidem. Magnam enim ducimus, iusto ea provident nam ab dolorum, fugit ad aliquam, tenetur libero odit eius ipsum quos ullam sed? Similique dolorum earum saepe doloribus labore non, veritatis corrupti aliquam maiores eligendi laboriosam ipsam nobis nemo voluptatibus nostrum unde in quae velit ut quam quas porro sed consequatur. Quae vero itaque, distinctio voluptate necessitatibus voluptatem eos iure blanditiis animi incidunt ducimus ab. Expedita, libero! Modi quaerat alias amet harum doloribus eveniet, at iusto, ut temporibus ea corporis nobis magnam, cupiditate aspernatur reiciendis laborum cumque! Exercitationem ut laborum fugiat voluptate esse maiores harum saepe impedit dolore ratione mollitia, doloribus alias quos. Reprehenderit veritatis fugit magnam beatae aperiam consequatur quis laboriosam nulla odio odit ad iste neque pariatur, libero perferendis debitis tempora doloremque obcaecati repellat tempore assumenda! Nesciunt quos quisquam dolorum, delectus nostrum alias culpa suscipit accusamus, impedit eligendi vitae saepe expedita in esse sunt at perferendis quo? Consequatur libero tempore voluptates consequuntur adipisci beatae, quas non? Eos dignissimos, iste porro deleniti maiores quis, illum veritatis dicta numquam nostrum mollitia? Voluptatum earum consectetur ratione explicabo optio quos sunt voluptas fugit! Tenetur corporis id inventore molestias nesciunt alias temporibus iure maxime nostrum ipsum nihil vel impedit debitis reprehenderit vitae aliquam aperiam, culpa sint quaerat a. Mollitia autem vel incidunt iste reprehenderit, ex blanditiis tenetur eaque officia obcaecati veniam. Aspernatur tenetur reprehenderit architecto saepe officia impedit amet qui aperiam aliquid ad veniam, corporis rerum mollitia vero? Deserunt amet, velit eligendi, laborum dignissimos voluptatem officiis neque cumque vel repellendus facilis nihil blanditiis aut non praesentium dolor qui perferendis culpa rerum? Fuga inventore beatae aut, nihil officia corporis ducimus. Obcaecati, repudiandae repellendus dicta dolor, iure laborum iusto quae vero ex ipsam non perspiciatis voluptate fugit aliquam, rerum aspernatur placeat. Reiciendis minima ratione ducimus quod eligendi. Laborum corporis illum, consequatur eius quos odit reiciendis aliquam ducimus accusantium ab corrupti, laudantium, voluptatibus quam! Facilis, laudantium commodi. Nisi quo maiores nesciunt, tempore voluptates quasi dolorem qui, soluta, voluptatibus molestiae cumque laboriosam corporis nobis dignissimos voluptatum hic rerum aut ab deleniti enim. Earum accusantium maiores hic ad amet consequuntur eveniet? Sunt corporis architecto magni, tempora nihil omnis qui dolores ea voluptate dolorum neque commodi quae ipsa, incidunt alias nisi consequatur officia a ex mollitia sed aut. Sequi quibusdam atque cumque dolores. Culpa, repellendus magnam! Cumque suscipit dolore dicta.</div>
+        
 
         <!-- donation section -->
-         <section id="donation-section"></section>
+         <section class="lg:px-[8%] px-[5%] md:py-12 py-8 flex flex-col" id="donation-section">
+            <div class="flex md:flex-row flex-col md:p-[2rem] p-4 border-2 border-slate-300 md:rounded-2xl rounded-xl md:gap-[2rem] md:mb-8 mb-4">
+                <div class="md:w-[48%] md:pb-0 mb-5">
+                    <img class="w-full" src="assets/noakhali.png" alt="noakhali_img">
+                </div>
+
+                <div class="md:w-[42%]">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-slate-700 bg-slate-300/50 px-4 py-2 rounded-lg mb-4">
+                            <img class="w-5 h-5" src="assets/coin.png" alt="coin">
+                            <h2 class=" md:text-[1rem] text-[0.9rem] font-medium"> <span id="noakhali-amount">2500</span> BDT</h2>
+                        </div>
+                        <h3 id="noakhali-fund" class="md:text-[1.3rem] text-[1.1rem] font-semibold mb-4">Donate for Flood at Noakhali, Bangladesh</h3>
+                        <p class="md:text-[1rem] text-[0.9rem] font-light text-slate-600 mb-6"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    </div>
+    
+                    <form id="noakhali-form" class="flex flex-col gap-4">
+                        <input class="rounded-lg border-2 border-slate-300 md:px-8 md:py-3 px-4 py-2 placeholder:font-light" type="text" id="noakhali-text" placeholder="Write Donation Amount">
+                        <input class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 md:rounded-xl rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200" type="submit" value="Donate Now" id="noakhali-btn">
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex md:flex-row flex-col md:p-[2rem] p-4 border-2 border-slate-300 md:rounded-2xl rounded-xl md:gap-[2rem] md:mb-8 mb-4">
+                <div class="md:w-[48%] md:pb-0 mb-5">
+                    <img class="w-full" src="assets/feni.png" alt="feni_img">
+                </div>
+
+                <div class="md:w-[42%]">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-slate-700 bg-slate-300/50 px-4 py-2 rounded-lg mb-4">
+                            <img class="w-5 h-5" src="assets/coin.png" alt="coin">
+                            <h2 class=" md:text-[1rem] text-[0.9rem] font-medium"> <span id="feni-amount">5000</span> BDT</h2>
+                        </div>
+                        <h3 id="feni-fund" class="md:text-[1.3rem] text-[1.1rem] font-semibold mb-4">Donate for Flood Relief in Feni,Bangladesh</h3>
+                        <p class="md:text-[1rem] text-[0.9rem] font-light text-slate-600 mb-6">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                    </div>
+    
+                    <form id="feni-form" class="flex flex-col gap-4">
+                        <input class="rounded-lg border-2 border-slate-300 md:px-8 md:py-3 px-4 py-2 placeholder:font-light" type="text" id="feni-text" placeholder="Write Donation Amount">
+                        <input class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 md:rounded-xl rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200" type="submit" value="Donate Now" id="feni-btn">
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex md:flex-row flex-col md:p-[2rem] p-4 border-2 border-slate-300 md:rounded-2xl rounded-xl md:gap-[2rem] md:mb-8 mb-4">
+                <div class="md:w-[48%] md:pb-0 mb-5">
+                    <img class="w-full" src="assets/quota-protest.png" alt="quota_img">
+                </div>
+
+                <div class="md:w-[42%]">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-slate-700 bg-slate-300/50 px-4 py-2 rounded-lg mb-4">
+                            <img class="w-5 h-5" src="assets/coin.png" alt="coin">
+                            <h2 class=" md:text-[1rem] text-[0.9rem] font-medium"> <span id="quota-amount">1000</span> BDT</h2>
+                        </div>
+                        <h3 id="quota-fund" class="md:text-[1.3rem] text-[1.1rem] font-semibold mb-4">Aid for Injured in the Quota Movement</h3>
+                        <p class="md:text-[1rem] text-[0.9rem] font-light text-slate-600 mb-6">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                    </div>
+    
+                    <form id="quota-form" class="flex flex-col gap-4">
+                        <input class="rounded-lg border-2 border-slate-300 md:px-8 md:py-3 px-4 py-2 placeholder:font-light" type="text" id="quota-text" placeholder="Write Donation Amount">
+                        <input class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 md:rounded-xl rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200" type="submit" value="Donate Now" id="quota-btn">
+                    </form>
+                </div>
+            </div>
+         </section>
 
          <!-- history section -->
-          <section id="history-section"></section>
+          <section id="history-section" class="hidden"></section>
     </main>
 
     <script src="Scripts/script.js"></script>
