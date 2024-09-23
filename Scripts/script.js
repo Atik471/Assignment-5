@@ -36,6 +36,20 @@ donationBtn.addEventListener('click', btnClickFunction)
 historyBtn.addEventListener('click', btnClickFunction)
 
 
+
+
+/*--------------  modal section --------------*/
+
+const modalSection = document.getElementById('modal-section')
+
+document.getElementById('modal-close').addEventListener('click', function(){
+    modalSection.classList.remove('flex')
+    modalSection.classList.add('hidden')
+})
+
+
+
+
 /*--------------  donation section --------------*/
 
 const totalAmount = document.getElementById('total-amount')
@@ -74,7 +88,7 @@ function prevent(event){
 
 
 
-// creating a form object for each fund
+// creating an object for each fund
 const noakhaliObj = {
     amountSpan: noakhaliAmount,
     textField: noakhaliText,
@@ -114,14 +128,38 @@ const quotaObj = {
 // reusable function
 function donateMoney(event, obj){
     // console.log(obj.textField.value)
+
     let donationAmount = obj.textField.value
     if(donationAmount <= 0 || isNaN(Number(donationAmount))){
-        alert('Please Select a Valid Amount')
+        alert('Please Select a Valid Amount!')
+        obj.textField.value = ''
+        return null
+    }
+    else if(Number(donationAmount) > Number(totalAmount.innerHTML)){
+        alert("You don't have enough money in your account!")
+        obj.textField.value = ''
+        return null
     }
 
     obj.amountSpan.innerHTML = parseFloat(obj.amountSpan.innerHTML) + parseFloat(donationAmount)
     totalAmount.innerHTML = parseFloat(totalAmount.innerHTML) - parseFloat(donationAmount)
 
+    const historyDiv = document.getElementById('history-div')
+    const newHistory = document.createElement('div')
+
+    newHistory.innerHTML = historyDiv.innerHTML
+    newHistory.classList.add(...historyDiv.classList)
+    newHistory.classList.remove('hidden')
+
+    const currentDate = new Date()
+    newHistory.querySelector('#history-date').innerHTML = currentDate.toString()
+    newHistory.querySelector('#history-amount').innerHTML = donationAmount
+    newHistory.querySelector('#history-fund').innerHTML = obj.fundName.innerHTML
+
+    historySection.appendChild(newHistory)
+
+    modalSection.classList.remove('hidden')
+    modalSection.classList.add('flex')
 
     obj.textField.value = ''
 }

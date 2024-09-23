@@ -32,10 +32,10 @@
 
     <title>Donate || Bangladesh</title>
 </head>
-<body class="font-lexend w-full ">
+<body class="font-lexend w-full">
     <!-- navbar -->
-    <header class="md:mb-[16rem] mb-[12rem]">
-        <div class="fixed top-0 left-0 flex justify-between items-center pt-[1.5rem] md:pb-[2.8rem] pb-[2rem] lg:px-[8%] px-[5%] bg-light-pink w-full backdrop-blur-md">
+    <header class="md:mb-[11rem] mb-[9rem]">
+        <div class="fixed top-0 left-0 flex justify-between items-center pt-[1.5rem] md:pb-[1.5rem] pb-[1rem] lg:px-[8%] px-[5%] bg-light-pink w-full backdrop-blur-md">
             <a href="faq.html" class="order-1 md:text-[1.3rem] text-[0.9rem] font-semibold md:px-8 md:py-3 px-4 py-1 rounded-lg bg-light-green hover:bg-hover-green duration-200">
                 <button>Blog</button>
             </a>
@@ -55,8 +55,8 @@
 
     <main>
         <!-- toggle buttons -->
-        <section class="fixed md:top-[7.5rem] top-[5.2rem] left-0 w-full">
-            <div class=" flex justify-center items-center gap-4 py-[1.5rem] backdrop-blur-md bg-light-pink">
+        <section class="fixed md:top-[6rem] top-[4.2rem] left-0 w-full">
+            <div class=" flex justify-center items-center gap-4 py-[1rem] backdrop-blur-md bg-light-pink">
                 <button id="donation-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg gap-4 bg-light-green hover:bg-hover-green border-2 border-light-green duration-200">Donation</button>
                 <button id="history-btn" class="md:text-[1.3rem] text-[1.1rem] font-semibold md:px-8 md:py-3 px-4 py-2 rounded-lg border-2 border-slate-300 text-slate-600 hover:bg-slate-200 duration-200 gap-4 ">History</button>
             </div>
@@ -134,7 +134,23 @@
          </section>
 
          <!-- history section -->
-          <section id="history-section" class="hidden"></section>
+        <section id="history-section" class="hidden lg:px-[8%] px-[5%] py-6 flex-col-reverse">
+            <div id="history-div" class="border-2 border-slate-300 md:rounded-2xl rounded-lg md:p-8 p-4 mb-8 hidden">
+                <h1 class="mb-4 md:text-[1.3rem] text-[1.1rem] font-bold"><span id="history-amount"></span> Taka is Donated for <span id="history-fund"></span></h1>
+                <p class="text-slate-600 font-light">Date: <span id="history-date"></span></p>
+            </div>
+        </section>
+
+        <!-- modal section -->
+         <section id="modal-section" class="fixed hidden justify-center items-center top-0 left-0 w-full h-full bg-black/40">
+            <div class="flex flex-col justify-center items-center text-center bg-white md:rounded-2xl rounded-xl lg:w-[40%] md:w-[60%] w-[80%] md:py-8 md:px-8 px-6 py-4 ">
+                <h1 class="text-[2rem] font-bold md:mb-4 mb-2">Congrats</h1>
+                <img class="md:w-10 md:h-10 w-6 h-6 md:mb-4 mb-2" src="assets/coin.png" alt="coin_img">
+                <p class="font-light text-slate-600 md:text-[1.1rem] tet-[0.9rem] md:mb-4 mb-2">You Have Donated To Humankind</p>
+                <p class="font-semibold md:text-[1.2rem] text-[1rem] md:mb-4 mb-2 ">Successfully</p>
+                <button id="modal-close" class="md:text-[1rem] text-[0.9rem] bg-slate-200 rounded-lg md:rounded-xl cursor-pointer md:px-4 md:py-3 px-3 py-2 font-semibold hover:bg-slate-300 duration-200 mb-4">Close Confirmation</button>
+            </div>
+         </section>
     </main>
 
     <script src="Scripts/script.js"></script>
