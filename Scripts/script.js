@@ -1,4 +1,6 @@
 
+
+
 /*--------------  toggle button --------------*/
 const donationBtn = document.getElementById("donation-btn")
 const historyBtn = document.getElementById("history-btn")
@@ -28,8 +30,6 @@ function btnClickFunction(event){
         historyBtn.classList.remove("bg-light-green", "hover:bg-hover-green", "text-black", "border-hover-green")
         donationBtn.classList.remove("border-slate-300", "text-slate-600", "hover:bg-slate-200")
     }
-    
-    // donationBtn.classList.add()
 }
 
 donationBtn.addEventListener('click', btnClickFunction)
